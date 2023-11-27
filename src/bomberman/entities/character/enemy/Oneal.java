@@ -3,8 +3,10 @@ package bomberman.entities.character.enemy;
 
 import bomberman.Board;
 import bomberman.Game;
+import bomberman.entities.character.enemy.ai.AIHigh;
 import bomberman.entities.character.enemy.ai.AIMedium;
 import bomberman.graphics.Sprite;
+import bomberman.level.LevelLoader;
 
 public class Oneal extends Enemy {
 	
@@ -12,8 +14,8 @@ public class Oneal extends Enemy {
 		super(x, y, board, Sprite.oneal_dead, Game.getBomberSpeed(), 200);
 		
 		_sprite = Sprite.oneal_left1;
-		
-		_ai = new AIMedium(_board.getBomber(), this, _board);
+		if(LevelLoader._level == 2) _ai = new AIHigh(_board.getBomber(),this);
+		else _ai = new AIMedium(_board.getBomber(), this, _board);
 		_direction  = _ai.calculateDirection();
 	}
 	

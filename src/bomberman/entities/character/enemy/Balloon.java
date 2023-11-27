@@ -2,10 +2,12 @@ package bomberman.entities.character.enemy;
 
 import bomberman.Board;
 import bomberman.Game;
+import bomberman.entities.character.enemy.ai.AIHigh;
 import bomberman.entities.character.enemy.ai.AILow;
 import bomberman.entities.character.enemy.ai.AIMedium;
 import bomberman.entities.character.enemy.ai.AIMedium2;
 import bomberman.graphics.Sprite;
+import bomberman.level.LevelLoader;
 
 public class Balloon extends Enemy {
 	
@@ -14,8 +16,8 @@ public class Balloon extends Enemy {
 		super(x, y, board, Sprite.balloom_dead, Game.getBomberSpeed() / 2, 100);
 		
 		_sprite = Sprite.balloom_left1;
-		
-		_ai = new AIMedium2(_board, this);
+		if(LevelLoader._level == 2) _ai = new AIHigh(_board.getBomber(),this);
+		else _ai = new AIMedium2(_board, this);
 		_direction = _ai.calculateDirection();
 	}
 

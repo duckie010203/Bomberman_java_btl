@@ -1,5 +1,6 @@
 package bomberman.entities.tile.destroyable;
 
+import bomberman.Audio.Sound;
 import bomberman.entities.Entity;
 import bomberman.entities.bomb.Flame;
 import bomberman.entities.tile.Tile;
@@ -9,7 +10,7 @@ import bomberman.graphics.Sprite;
  * Đối tượng cố định có thể bị phá hủy
  */
 public class DestroyableTile extends Tile {
-
+	Sound brickBreakAudio = new Sound("res/sound/Crystal.wav");
 	private final int MAX_ANIMATE = 7500;
 	private int _animate = 0;
 	protected boolean _destroyed = false;
@@ -39,7 +40,10 @@ public class DestroyableTile extends Tile {
 	public boolean collide(Entity e) {
 		// TODO: xử lý khi va chạm với Flame
 		if (e instanceof Flame)
+		{
+			brickBreakAudio.playSound(0);
 			destroy();
+		}
 		return false;
 	}
 	

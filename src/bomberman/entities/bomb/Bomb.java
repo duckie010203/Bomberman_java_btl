@@ -1,5 +1,6 @@
 package bomberman.entities.bomb;
 
+import bomberman.Audio.Sound;
 import bomberman.Board;
 import bomberman.Game;
 import bomberman.entities.AnimatedEntitiy;
@@ -14,6 +15,7 @@ import java.util.Collection;
 
 public class Bomb extends AnimatedEntitiy {
 
+	Sound explosionBombAudio = new Sound("res/sound/Explosion.wav");
 	protected double _timeToExplode = 120; //2 seconds
 	public int _timeAfter = 20;
 	
@@ -79,6 +81,7 @@ public class Bomb extends AnimatedEntitiy {
      */
 	protected void explode() {
 
+		explosionBombAudio.playSound(0);
 		// TODO: xử lý khi Character đứng tại vị trí Bomb
 		_allowedToPassThru = true;
 		_exploded = true;

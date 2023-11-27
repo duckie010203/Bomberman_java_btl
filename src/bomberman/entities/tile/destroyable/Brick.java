@@ -1,16 +1,16 @@
 package bomberman.entities.tile.destroyable;
 
 
+import bomberman.Audio.Sound;
 import bomberman.graphics.Screen;
 import bomberman.graphics.Sprite;
 import bomberman.level.Coordinates;
 
 public class Brick extends DestroyableTile {
-	
+
 	public Brick(int x, int y, Sprite sprite) {
 		super(x, y, sprite);
 	}
-	
 	@Override
 	public void update() {
 		super.update();

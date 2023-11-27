@@ -1,6 +1,7 @@
 package bomberman.entities.tile.item;
 
 import bomberman.Game;
+import bomberman.Audio.Sound;
 import bomberman.entities.Entity;
 import bomberman.entities.character.Bomber;
 import bomberman.graphics.Sprite;
@@ -11,6 +12,7 @@ public class FlameItem extends Item {
 		super(x, y, sprite);
 	}
 
+	Sound upItemAudio = new Sound("res/sound/UpItem.wav");
 	@Override
 	public boolean collide(Entity e) {
 		// TODO: xử lý Bomber ăn Item
@@ -19,6 +21,7 @@ public class FlameItem extends Item {
 			if (!e.isRemoved())
 			{
 				Game.addBombRadius(1);
+				upItemAudio.playSound(0);
 				remove();
 			}
 		}

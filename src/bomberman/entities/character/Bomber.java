@@ -1,5 +1,6 @@
 package bomberman.entities.character;
 
+import bomberman.Audio.Sound;
 import bomberman.Board;
 import bomberman.Game;
 import bomberman.entities.Entity;
@@ -15,7 +16,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Bomber extends Character {
-
+    
+    Sound placeBombAudio = new Sound("res/sound/PutBomb.wav");
+    Sound deadAudio = new Sound("res/sound/Hit.wav");
     private List<Bomb> _bombs;
     protected Keyboard _input;
 
@@ -90,6 +93,7 @@ public class Bomber extends Character {
         // TODO: thực hiện tạo đối tượng bom, đặt vào vị trí (x, y)
         Bomb b = new Bomb(x,y,_board);
         _board.addBomb(b);
+        placeBombAudio.playSound(0);
     }
 
     private void clearBombs() {
@@ -110,6 +114,7 @@ public class Bomber extends Character {
     public void kill() {
         if (!_alive) return;
         _alive = false;
+        deadAudio.playSound(0);
     }
 
     @Override
@@ -171,11 +176,11 @@ public class Bomber extends Character {
         {
             kill();
         }
-
         if (e instanceof Enemy)
         {
             kill();
         }
+
         return true;
     }
 

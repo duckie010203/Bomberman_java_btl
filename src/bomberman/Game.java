@@ -1,5 +1,6 @@
 package bomberman;
 
+import bomberman.Audio.Sound;
 import bomberman.graphics.Screen;
 import bomberman.gui.Frame;
 import bomberman.input.Keyboard;
@@ -8,12 +9,20 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+
 
 /**
  * Tạo vòng lặp cho game, lưu trữ một vài tham số cấu hình toàn cục,
  * Gọi phương thức render(), update() cho tất cả các entity
  */
 public class Game extends Canvas {
+
+	Sound mainAudio = new Sound("res/sound/Stage.wav");
+
 
 	public static final int TILES_SIZE = 16,
 							WIDTH = TILES_SIZE * (31 /2 ),
@@ -110,7 +119,7 @@ public class Game extends Canvas {
 	
 	public void start() {
 		_running = true;
-		
+		mainAudio.playSound(100);
 		long  lastTime = System.nanoTime();
 		long timer = System.currentTimeMillis();
 		final double ns = 1000000000.0 / 60.0; //nanosecond, 60 frames per second

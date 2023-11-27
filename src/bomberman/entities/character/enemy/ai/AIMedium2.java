@@ -21,8 +21,6 @@ public class AIMedium2 extends AI{
 
     @Override
     public int calculateDirection() {
-
-
         return findDirection();
     }
 

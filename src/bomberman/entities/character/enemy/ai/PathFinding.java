@@ -13,35 +13,13 @@ public class PathFinding {
         this.direction = direction;
     }
 
-    public double getG() {
-        return G;
-    }
-
-    public void setG(double g) {
-        G = g;
-    }
-
-    public double getH() {
-        return H;
-    }
-
-    public void setH(double h) {
-        H = h;
-    }
-
     public double getF() {
         return F;
     }
 
-    public void setF(double f) {
-        F = f;
-    }
 
     public int getDirection() {
         return direction;
     }
 
-    public void setDirection(int direction) {
-        this.direction = direction;
-    }
 }

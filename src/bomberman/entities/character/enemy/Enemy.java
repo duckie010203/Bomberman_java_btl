@@ -44,7 +44,51 @@ public abstract class Enemy extends Character {
 		_timeAfter = 20;
 		_deadSprite = dead;
 	}
-	
+
+
+	public static void avoidBomb(int x, int y) {
+		Game.matrix[y][x] = 0;
+		// Up
+		if (y - 1 >= 0 && Game.matrix[y - 1][x] == 1) {
+			Game.matrix[y - 1][x] = -1;
+		}
+		// Right
+		if (x + 1 < 13 && Game.matrix[y][x + 1] == 1) {
+			Game.matrix[y][x + 1] = -1;
+		}
+		// Down
+		if (y + 1 < 31 && Game.matrix[y + 1][x] == 1) {
+			Game.matrix[y + 1][x] = -1;
+		}
+		// Left
+		if (x - 1 >= 0 && Game.matrix[y][x - 1] == 1) {
+			Game.matrix[y][x - 1] = -1;
+		}
+	}
+
+	public static void resetAvoidBomb(int x, int y) {
+		Game.matrix[y][x] = 1;
+
+		// Up
+		if (y - 1 >= 0 && Game.matrix[y - 1][x] == -1) {
+			Game.matrix[y - 1][x] = 1;
+		}
+		// Right
+		if (x + 1 < 31 && Game.matrix[y][x + 1] == -1) {
+			Game.matrix[y][x + 1] = 1;
+		}
+		// Down
+		if (y + 1 < 13 && Game.matrix[y + 1][x] == -1) {
+			Game.matrix[y + 1][x] = 1;
+		}
+		// Left
+		if (x - 1 >= 0 && Game.matrix[y][x - 1] == -1) {
+			Game.matrix[y][x - 1] = 1;
+		}
+
+
+	}
+
 	@Override
 	public void update() {
 		animate();

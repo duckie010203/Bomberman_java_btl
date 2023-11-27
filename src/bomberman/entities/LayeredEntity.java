@@ -2,6 +2,7 @@ package bomberman.entities;
 
 import bomberman.entities.tile.destroyable.DestroyableTile;
 import bomberman.graphics.Screen;
+import bomberman.Game;
 
 import java.util.LinkedList;
 
@@ -47,9 +48,11 @@ public class LayeredEntity extends Entity {
 		Entity top  = getTopEntity();
 		
 		if(top.isRemoved())  {
+			Game.matrix[(int) _entities.getLast()._y][(int) _entities.getLast()._x] = 1;
 			_entities.removeLast();
 		}
 	}
+
 	
 	public void addBeforeTop(Entity e) {
 		_entities.add(_entities.size() - 1, e);

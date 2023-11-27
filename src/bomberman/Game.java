@@ -23,7 +23,7 @@ public class Game extends Canvas {
 
 	Sound mainAudio = new Sound("res/sound/Stage.wav");
 
-
+	public static int[][] matrix = new int[13][31];
 	public static final int TILES_SIZE = 16,
 							WIDTH = TILES_SIZE * (31 /2 ),
 							HEIGHT = 13 * TILES_SIZE;

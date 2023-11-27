@@ -17,6 +17,7 @@ import bomberman.exceptions.LoadLevelException;
 import bomberman.graphics.Screen;
 import bomberman.graphics.Sprite;
 
+
 import java.io.FileReader;
 import java.util.Scanner;
 
@@ -89,17 +90,20 @@ public class FileLevelLoader extends LevelLoader {
 						break;
 					//add Bomber
 					case 'p':
+						Game.matrix[y][x] = 1;
 						_board.addCharacter( new Bomber(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board) );
 						Screen.setOffset(0, 0);
 						_board.addEntity(pos, new Grass(x, y, Sprite.grass));
 						break;
 					//add enemy 1
 					case '1':
+						Game.matrix[y][x] = 1;
 						_board.addCharacter( new Balloon(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
 						_board.addEntity(pos, new Grass(x, y, Sprite.grass));
 						break;
 					//add enemy 2
 					case '2':
+						Game.matrix[y][x] = 1;
 						_board.addCharacter( new Oneal(Coordinates.tileToPixel(x), Coordinates.tileToPixel(y) + Game.TILES_SIZE, _board));
 						_board.addEntity(pos, new Grass(x, y, Sprite.grass));
 						break;
@@ -145,6 +149,7 @@ public class FileLevelLoader extends LevelLoader {
 						break;
 					//con lai la grass
 					default:
+						Game.matrix[y][x] = 1;
 						_board.addEntity(pos,new Grass(x,y,Sprite.grass));
 						break;
 				}

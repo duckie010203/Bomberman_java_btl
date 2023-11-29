@@ -14,10 +14,13 @@ import oop.bomberman.entities.character.Player;
 
 import javax.imageio.ImageIO;
 
+
+// Handles rendering for all Entities and some Game Panel sub screen
+
 public class Screen implements CommonVariables {
     protected int _width, _height;
     public int[] _pixels;
-    private final int _transparentColor = 0xffff00ff; //pink with alpha channel (ff in the begining)
+    private final int _transparentColor = 0xffff00ff; //pink with alpha channel (ff in the beginning)
     private Font font;
     public boolean isBasicMap = true;
 
@@ -26,10 +29,7 @@ public class Screen implements CommonVariables {
 
     private BufferedImage background = null;
     private Image backgroundFixed = null;
-
     private BufferedImage aboutImage = null;
-    private Image aboutImageFixed = null;
-
     private BufferedImage chooseNewGameImage = null;
     private Image chooseNewGameImageFixed = null;
 
@@ -177,7 +177,6 @@ public class Screen implements CommonVariables {
         g.setFont(font);
         g.setColor(Color.white);
         drawCenteredString("PAUSED", getRealWidth(), getRealHeight(), g);
-
     }
 
     public void drawMenu(Graphics g) {

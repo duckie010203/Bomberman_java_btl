@@ -9,9 +9,8 @@ import oop.bomberman.graphics.Sprite;
 
 public class Explosion extends Entity {
 
-    protected boolean _last = false;
+    protected boolean _last = false; // check last segment of explosion
     protected Board _board;
-    protected Sprite _sprite1, _sprite2;
 
     public Explosion(int x, int y, int direction, boolean last, Board board) {
         _x = x;

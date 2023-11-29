@@ -50,7 +50,7 @@ public class Player extends Character {
         }
 
         if (_timeBetweenPutBombs < -7500) _timeBetweenPutBombs = 0;
-        else _timeBetweenPutBombs--; //dont let this get tooo big
+        else _timeBetweenPutBombs--; //don't let this get too big
 
         animate();
 
@@ -98,7 +98,6 @@ public class Player extends Character {
     protected void placeBomb(int x, int y) {
         Bomb b = new Bomb(x, y, _board);
         Enemy.avoidBomb(x, y);
-        //System.out.println(x + " " + y);
         _board.addBomb(b);
         placeBombAudio.playSound(0);
     }
@@ -176,29 +175,6 @@ public class Player extends Character {
 
             Entity a = _board.getEntity(xt, yt, this);
             if (!a.collide(this)) {
-				/*
-				if (_input.right || _input.left) {
-					if ((a.getY() * Game.TILES_SIZE + 14 > _y
-							&& a.getY() * Game.TILES_SIZE < _y)) {
-						_y -= 1;
-					}
-					if (((a.getY() + 1) * Game.TILES_SIZE + 15 > _y
-							&& (a.getY() + 1) * Game.TILES_SIZE < _y)) {
-						_y += 1;
-					}
-				}
-
-				if (_input.up || _input.down) {
-					if ((a.getX() * Game.TILES_SIZE + 16 > _x
-							&& a.getX() * Game.TILES_SIZE + 6 < _x)) {
-						_x += 1;
-					}
-					if (((a.getX() - 1) * Game.TILES_SIZE + 15 > _x
-							&& (a.getX() - 1) * Game.TILES_SIZE < _x)) {
-						_x -= 1;
-					}
-				}
-				*/
                 return false;
             }
 
@@ -248,21 +224,6 @@ public class Player extends Character {
         _powerups.add(p);
         upItemAudio.playSound(0);
         p.setValues();
-    }
-
-    public void clearUsedPowerups() {
-        Powerup p;
-        for (int i = 0; i < _powerups.size(); i++) {
-            p = _powerups.get(i);
-            if (p.isActive() == false)
-                _powerups.remove(i);
-        }
-    }
-
-    public void removePowerups() {
-        for (int i = 0; i < _powerups.size(); i++) {
-            _powerups.remove(i);
-        }
     }
 
     /*

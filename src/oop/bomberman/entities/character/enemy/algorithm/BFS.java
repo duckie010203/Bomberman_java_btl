@@ -91,7 +91,9 @@ public class BFS {
         }
     }
 
-    public static void main(String[] args) {
+    // debug bfs
+    /*
+        public static void main(String[] args) {
         int[][] matrix = {
                 {1, 0, 1, 1, 1, 1, 0, 1, 1, 1},
                 {1, 0, 1, 0, 1, 1, 1, 0, 1, 1},
@@ -109,4 +111,5 @@ public class BFS {
             for (Point point : path) System.out.println(point.row + " " + point.col);
         }
     }
+    */
 }

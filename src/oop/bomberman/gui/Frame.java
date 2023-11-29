@@ -46,26 +46,6 @@ public class Frame extends JFrame {
         return _infopanel;
     }
 
-    public void newGame() {
-        _game.getBoard().newGame();
-    }
-
-    public void changeLevel(int i) {
-        _game.getBoard().changeLevel(i);
-    }
-
-    public void pauseGame() {
-        _game.getBoard().gamePauseOnSetting();
-    }
-
-    public void resumeGame() {
-        _game.getBoard().gameResume();
-    }
-
-    public boolean isRunning() {
-        return _game.isRunning();
-    }
-
     public void setTime(int time) {
         _infopanel.setTime(time);
     }

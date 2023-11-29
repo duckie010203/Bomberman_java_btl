@@ -21,7 +21,6 @@ import oop.bomberman.level.Level;
 
 public class Board implements IRender {
 
-    public int _width, _height;
     protected Level _level;
     protected Game _game;
     protected Keyboard _input;
@@ -44,7 +43,6 @@ public class Board implements IRender {
         _screen = screen;
 
         _screenToShow = 4;
-        //changeLevel(1);
     }
 
     /*
@@ -154,7 +152,6 @@ public class Board implements IRender {
             if (p.getX() == x && p.getY() == y && level == p.getLevel())
                 return true;
         }
-
         return false;
     }
 
@@ -497,20 +494,12 @@ public class Board implements IRender {
         this.points += points;
     }
 
-    public void resetPoints() {
-        points = 0;
-    }
-
     public void addLives(int lives) {
         this._lives += lives;
     }
 
     public int getWidth() {
         return _level.getWidth();
-    }
-
-    public int getHeight() {
-        return _level.getHeight();
     }
 
 }

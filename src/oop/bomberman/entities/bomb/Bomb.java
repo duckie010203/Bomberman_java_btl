@@ -13,7 +13,7 @@ import oop.bomberman.level.Coordinates;
 
 public class Bomb extends AnimatedEntitiy {
 
-    protected double _timeToExplode = 120;
+    protected double _timeToExplode = 120; //2s
     public int _timeAfter = 20;
     protected Board _board;
     protected boolean _allowedToPassThru = true;
@@ -104,14 +104,11 @@ public class Bomb extends AnimatedEntitiy {
         return null;
     }
 
-    public boolean isExploded() {
-        return _exploded;
-    }
-
 
     @Override
     public boolean collide(Entity e) {
 
+        // when Player comes out after placing the bomb
         if (e instanceof Player) {
             double diffX = e.getX() - Coordinates.tileToPixel(getX());
             double diffY = e.getY() - Coordinates.tileToPixel(getY());
@@ -124,6 +121,8 @@ public class Bomb extends AnimatedEntitiy {
 
             return _allowedToPassThru;
         }
+
+        // Collide with another bomb's flame
 
         if (e instanceof DirectionalExplosion) {
             explode();

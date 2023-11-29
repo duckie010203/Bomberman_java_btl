@@ -130,27 +130,21 @@ public class Game extends Canvas implements MouseListener, MouseMotionListener, 
 
     public void start() {
         readHighscore();
-
+        //intro
         JWindow window = new JWindow();
 
-        // Tạo JLabel để hiển thị hình gif
         ImageIcon gifIcon = new ImageIcon("res/textures/intro.gif");
         JLabel gifLabel = new JLabel(gifIcon);
 
-        // Thêm JLabel vào JWindow
         window.add(gifLabel);
 
-        // Lấy kích thước màn hình
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-        // Tính toán vị trí để đưa JWindow ra giữa màn hình
         int x = (screenSize.width - gifIcon.getIconWidth()) / 2;
         int y = (screenSize.height - gifIcon.getIconHeight()) / 2;
 
-        // Đặt vị trí và kích thước của JWindow
         window.setBounds(x+3, y-7, gifIcon.getIconWidth(), gifIcon.getIconHeight());
 
-        // Hiển thị JWindow
         window.setVisible(true);
         try {
             Thread.sleep(4900);
@@ -492,14 +486,6 @@ public class Game extends Canvas implements MouseListener, MouseMotionListener, 
         bombRate += i;
     }
 
-    //screen delay
-    public int getScreenDelay() {
-        return _screenDelay;
-    }
-
-    public void decreaseScreenDelay() {
-        _screenDelay--;
-    }
 
     public void resetScreenDelay() {
         _screenDelay = SCREENDELAY;

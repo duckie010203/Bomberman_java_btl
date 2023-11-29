@@ -115,6 +115,10 @@ public class Board implements IRender {
     }
 
     public void nextLevel() {
+        if(_level.getLevel() == 7){
+            endGame();
+            return;
+        }
         changeLevel(_level.getLevel() + 1);
     }
 

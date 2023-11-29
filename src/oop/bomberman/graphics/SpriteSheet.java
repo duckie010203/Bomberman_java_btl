@@ -41,11 +41,4 @@ public class SpriteSheet implements CommonVariables {
         load();
     }
 
-    public String getPath() {
-        return path;
-    }
-
-    public int getSIZE() {
-        return SIZE;
-    }
 }

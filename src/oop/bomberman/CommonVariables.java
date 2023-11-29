@@ -15,9 +15,10 @@ public interface CommonVariables {
     Audio placeBombAudio = new Audio("res/sound/PutBomb.wav");
     Audio explosionBombAudio = new Audio("res/sound/Explosion.wav");
     Audio deadAudio = new Audio("res/sound/Hit.wav");
-    Audio upItemAudio = new Audio("res/sound/UpItem.wav");
-    Audio brickBreakAudio = new Audio("res/sound/Crystal.wav");
+    Audio upItemAudio = new Audio("res/sound/UpItem.wav");// power up
+    Audio brickBreakAudio = new Audio("res/sound/Crystal.wav");// break brick
 
+    SpriteSheet tiles = new SpriteSheet("/textures/classic.png", 256);
     SpriteSheet character = new SpriteSheet("/textures/character.png", 64);
     SpriteSheet bomb = new SpriteSheet("/textures/bomb.png", 64);
     SpriteSheet item = new SpriteSheet("/textures/item.png", 64);

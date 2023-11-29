@@ -499,10 +499,6 @@ public class Game extends Canvas implements MouseListener, MouseMotionListener, 
         return _board;
     }
 
-    public Frame getFrame() {
-        return _frame;
-    }
-
     public void run() {
         _running = true;
         _paused = false;

@@ -10,13 +10,13 @@ public abstract class Level implements ILevel {
     protected Board board;
 
     protected static String[] codes = {
-            "emanhduc",
-            "emanhduc1",
-            "emanhduc2",
-            "emanhduc3",
-            "emanhduc4",
-            "test0",
             "test1",
+            "test2",
+            "test3",
+            "test4",
+            "test5",
+            "test6",
+            "test7",
     };
 
     public Level(String path, Board board) {

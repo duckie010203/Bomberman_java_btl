@@ -1,5 +1,5 @@
 package oop.bomberman.entities;
-
+// Entities with animation effects.
 
 public abstract class AnimatedEntitiy extends Entity {
     protected int _animate = 0;

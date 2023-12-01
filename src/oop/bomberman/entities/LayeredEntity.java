@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 import oop.bomberman.entities.tile.destroyable.DestroyableTile;
 import oop.bomberman.graphics.Screen;
-
+// Contain and manage multiple entities at the same position.
 public class LayeredEntity extends Entity {
 
     protected LinkedList<Entity> _entities = new LinkedList<>();
@@ -59,6 +59,7 @@ public class LayeredEntity extends Entity {
     }
 
     @Override
+    // Retrieve the topmost entity to handle collisions.
     public boolean collide(Entity e) {
         return getTopEntity().collide(e);
     }

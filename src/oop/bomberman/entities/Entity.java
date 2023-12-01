@@ -5,7 +5,7 @@ import oop.bomberman.graphics.IRender;
 import oop.bomberman.graphics.Screen;
 import oop.bomberman.graphics.Sprite;
 import oop.bomberman.level.Coordinates;
-
+// Class representing all entities in the game (Bomber, Enemy, Wall, Brick, ...).
 public abstract class Entity implements IRender, CommonVariables {
 
     protected double _x, _y;
@@ -30,7 +30,7 @@ public abstract class Entity implements IRender, CommonVariables {
         return _sprite;
     }
 
-    public abstract boolean collide(Entity e);
+    public abstract boolean collide(Entity e);  // Handle collision between two entities.
 
     public double getX() {
         return _x;

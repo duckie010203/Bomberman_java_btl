@@ -71,12 +71,15 @@ public class Bomb extends AnimatedEntitiy {
             explosion.update();
         }
     }
-
+    /**
+     * Handle explosion
+     */
     public void explode() {
         _timeToExplode = 0;
     }
 
     protected void explosion() {
+        // Handle when the character is standing at the position of a bomb.
         _allowedToPassThru = true;
         _exploded = true;
 

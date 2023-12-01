@@ -23,7 +23,7 @@ public class Player extends Character {
     private List<Bomb> _bombs;
     protected Keyboard _input;
 
-    protected int _timeBetweenPutBombs = 0;
+    protected int _timeBetweenPutBombs = 0; //Each time a new bomb is placed, this value will be reset to 0 and decreased in each update().
 
     public static List<Powerup> _powerups = new ArrayList<>();
 
@@ -82,7 +82,13 @@ public class Player extends Character {
     | Mob Unique
     |--------------------------------------------------------------------------
      */
+    //Check if it is possible, then place the bomb at the current position of the Bomber.
     private void detectPlaceBomb() {
+        // Check if the bomb placement control key is pressed and if the values _timeBetweenPutBombs and Game.getBombRate() are satisfied
+        // Game.getBombRate(): return the number of bombs that can be placed consecutively at the current moment
+        // _timeBetweenPutBombs: used to prevent the Bomber from placing 2 bombs at the same position in too short a period
+        // If the above three conditions are met, then proceed to place the bomb using placeBomb()
+
         if (_input.space && Game.getBombRate() > 0 && _timeBetweenPutBombs < 0) {
 
             int xt = Coordinates.pixelToTile(_x + _sprite.getSize() / 2);
@@ -96,6 +102,7 @@ public class Player extends Character {
     }
 
     protected void placeBomb(int x, int y) {
+        // creating a bomb object and placing it at the position (x, y).
         Bomb b = new Bomb(x, y, _board);
         Enemy.avoidBomb(x, y);
         _board.addBomb(b);

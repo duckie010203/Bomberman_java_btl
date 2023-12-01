@@ -20,7 +20,7 @@ import oop.bomberman.level.FileLevel;
 import oop.bomberman.level.Level;
 
 public class Board implements IRender {
-
+    // Manage control operations, load levels, and render game screens.
     protected Level _level;
     protected Game _game;
     protected Keyboard _input;

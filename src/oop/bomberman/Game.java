@@ -16,7 +16,8 @@ import oop.bomberman.gui.Frame;
 import oop.bomberman.input.Keyboard;
 
 import javax.swing.*;
-
+    // Create a loop for the game, store several global configuration parameters.
+    //render() and update() methods for all entities.
 public class Game extends Canvas implements MouseListener, MouseMotionListener, CommonVariables {
 
     public static final double VERSION = 1.9;

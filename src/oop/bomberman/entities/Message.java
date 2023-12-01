@@ -3,7 +3,7 @@ package oop.bomberman.entities;
 import java.awt.Color;
 
 import oop.bomberman.graphics.Screen;
-
+// Display a message.
 public class Message extends Entity {
 
     protected String _message;

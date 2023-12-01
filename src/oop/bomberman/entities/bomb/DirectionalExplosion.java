@@ -51,7 +51,7 @@ public class DirectionalExplosion extends Entity {
             _explosions[i] = new Explosion(x, y, _direction, last, _board);
         }
     }
-
+    // Calculate the length of the flame, if seeing something as Brick/Wall, the length will be shortened.
     private int calculatePermitedDistance() {
         int radius = 0;
         int x = (int) _x;
